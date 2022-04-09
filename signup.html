@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+      <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Inscription</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Create New Account </h2><br>
+
+        <form onsubmit="signup()" >
+
+             <div class="_label">
+               <i class="fa fa-envelope"></i>
+             </div>
+             <div class="_input">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+            </div><br>
+
+            <div class="_label">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <div class="_input">
+                <input type="text" class="form-control" id="name" placeholder="Enter nom" name="name" required>
+            </div><br>
+
+            <div class="_label">
+
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            </div>
+            <div class="_input">
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="pwd" required>
+            </div><br>
+
+            <button type="submit" id="save_btn" class="butt"  onclick="window.location.href = 'signin.html';" >S'inscrire</button>
+        </form>
+
+
+        <div id="message">
+
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        </div>
+
+    </div>
+
+
+     <script src="main.js"></script>
+
+     <script src="jquery-3.6.0.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script type="text/javascript">
+
+
+       /****************script de validation des champs with jquery******************************/ 
+              $("#save_btn").click(function(){
+                
+
+                   var validname = /^[a-zA-Z]*$/;
+                   var emailvalid = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$'/;
+                   var prenom = $("#name").val();
+                   var mail = $("#email").val();
+
+
+                   if(validname.test(prenom) && prenom !== ''){
+
+                      //cas valide
+                        alert(" Name is valide ");
+                   }else
+                   {
+                       alert("Nam invalide ! please enter a valid Name");
+                       window.location.href = 'signup.html';
+                   }
+                   if(/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(mail) && mail !== ''){
+
+                      //cas valide
+                       alert("Adresse e-mail valide !");
+                   }else
+                   {
+                       alert("Adresse e-mail invalide !Please enter a valid e-mail");
+                       window.location.href = 'signup.html';
+                   }
+
+                 });
+
+               $("#password").focus (function()  {
+                 document.getElementById("message").style.display = "block";
+               });
+
+               $("#password").blur(function() {
+                   document.getElementById("message").style.display = "none";
+                });
+
+//// When the user starts to type something inside the password field 
+/****************KeyUP Function with Jquery************/
+
+   //var pas = $("#password");
+   var pas = document.getElementById('password');
+
+  $("#password").keyup(function(){
+
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+
+  if( pas.value.match(lowerCaseLetters)) {  
+
+    $("#letter").removeClass("invalid");
+    $("#letter").addClass("valid");
+
+  } else {
+
+    $("#letter").removeClass("valid");
+    $("#letter").addClass("invalid");
+
+  }
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+
+  if( pas.value.match(upperCaseLetters) ) {  
+
+     $("#capital").removeClass("invalid");
+     $("#capital").addClass("valid");
+  } else {
+
+     $("#capital").removeClass("valid");
+     $("#capital").addClass("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+
+  if(pas.value.match(numbers)) {  
+
+     $("#number").removeClass("invalid");
+    $("#number").addClass("valid");
+
+  } else {
+
+    $("#number").removeClass("valid");
+    $("#number").addClass("invalid");
+  }
+
+});
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+*{
+	margin: 0;
+	padding: 0; 
+	box-sizing: border-box;
+}
+body
+{
+	background: url(ts.jpeg) no-repeat;
+	background-size: 1350px;
+
+}
+.container
+{
+	position: absolute;
+	background: #000;
+	max-width: 500px;
+	height: 500px;
+	margin: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 25px;
+	box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 1.7);
+	padding: 50px;
+    
+}
+.container h2
+{
+	color: #0863a5;
+	font-size: 34px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	padding-left: 60px;
+
+}
+.form-control
+{
+    box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 70px;
+    margin: 10px;
+    border: none;	
+}
+
+.form-control:focus
+{
+   outline: none;
+}
+.butt
+{
+	background: linear-gradient(45deg,#21336f,#0863a5);
+	color: #fff;
+	width: 230px;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+	margin-top: 40px;
+	margin-left: 80px;
+	box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+
+}
+.butt:hover
+{
+	background: linear-gradient(45deg,#0863a5,#0863a5);
+}
+.fa
+{
+	
+color: #0863a5;
+
+	
+}
+
+._label
+{ 
+    
+	font-family:verdana, arial, sans-serif;
+	display:inline-block;
+	
+}
+._input{
+
+   display:inline-block;
+}
+         #message {
+
+            display:none;
+            float: left;
+            transform: translate(-50%,-50%);
+            background: black;
+            color: #fff;
+            padding: 20px;
+            margin-top: -80px;
+            margin-left: -240px;
+            width: 300px;
+            height: 270px; 
+            border-radius: 10px;
+         }
+
+         #message p {
+
+            padding: 10px 35px;
+            font-size: 15px;
+          }
+
+
+
+         /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+           color: green;
+         }
+
+        .valid:before {
+         position: relative;
+         left: -35px;
+         content: "✔";
+        }
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+       .invalid {
+          color: red;
+         }
+
+      .invalid:before {
+        position: relative;
+       left: -35px;
+       content: "✖";
+      }
+
