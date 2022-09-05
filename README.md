@@ -1,4 +1,4 @@
-# Registration-and-Authentication-with-local-storage-Using-jQuery
+# Registration-and-Authentication-with-local-storage-Using-Version-jQuery
 
 
 ![alt text](https://github.com/FadwaHs/Registration-and-Authentication-with-local-storage-Using-jQuery/blob/main/images/signup.png)
